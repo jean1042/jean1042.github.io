@@ -20,7 +20,7 @@ title                    : "Jiyoon's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Jiyoon Park"
-description              : "An amazing website."
+description              : "Jiyoon's blog description"
 url                      : "https://jean1042.github.io"
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
