@@ -94,10 +94,10 @@ analytics:
 # Site Author
 author:
   name             : "Jiyoon, Park"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile.png"
   bio              : "Change the world, WHY NOT"
   location         : "Seoul, South Korea"
-  email            : parkjiyoon1042@gmail.com
+  email            : "parkjiyoon1042@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
