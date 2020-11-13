@@ -15,7 +15,7 @@ toc_sticky: true
 
 Soundcloud에서 처음 개발해 현재 CNCF재단에서 관리하는 프로젝트
 
-![Prometheus%206d09cd3cd79945e6975b311b44614ffc/Untitled.png](Prometheus%206d09cd3cd79945e6975b311b44614ffc/Untitled.png)
+![Prometheus%206d09cd3cd79945e6975b311b44614ffc:Untitled](https://user-images.githubusercontent.com/25656426/99046696-77ea3980-25d6-11eb-9797-04ceb61a55a5.png)
 
 ## 주요 기능
 
