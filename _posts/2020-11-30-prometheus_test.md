@@ -1,6 +1,6 @@
 # Front Matter
 ---
-date: 2020-11-39
+date: 2020-11-12
 title: "Prometheus Study"
 categories: blog
 tags: jekyll
