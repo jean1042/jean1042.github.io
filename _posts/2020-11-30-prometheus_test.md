@@ -1,12 +1,10 @@
-# Front Matter
+# Prometheus operator의 작동방식
 ---
 date: 2020-11-12
 title: "Prometheus Study"
 categories: blog
 tags: jekyll
-# 목차
-toc: true  
-toc_sticky: true 
+
 ---
 
 # Prometheus
@@ -62,13 +60,6 @@ there are two custom resources involved in this process:
     - Defines the different scraping ports
     - Defines all the additional scraping parameters like scraping interval, protocol to use, TLS credentials, re-labeling policies, etc.
 
-    안되는거
-
-    172-16-17-216
-
-    172-16-16-217
-
-    172.16.16.25
 
     ## Prometheus가 label_values를 알아내는 방법
 
