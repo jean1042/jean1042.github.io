@@ -353,8 +353,8 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 mzc01-jiyoon@MZC01-JIYOON web_infra % terraform apply
 ```
 
-![../assets/aws_instance.png]
-(../assets/aws_instance.png)
+![aws_instance](https://user-images.githubusercontent.com/25656426/102163175-f97f0100-3ecd-11eb-998a-b4a7d1364d5f.png)
+
 
 ### 테라폼을 사용하면서 주의해야 할 점
 
