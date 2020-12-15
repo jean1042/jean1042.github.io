@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Jiyoon's Blog"
+title                    : "June in Cloud-Valley"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Jiyoon Park"
-description              : "Jiyoon's blog description"
+name                     : "Jiyoon Park, June"
+description              : "Interested in Cloud technology, Boxing, Reading, Social Welfare and Netflix."
 url                      : "https://jean1042.github.io"
 baseurl                  : ""
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
