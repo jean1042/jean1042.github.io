@@ -1,3 +1,13 @@
+---
+title:  "Kubernetes 1.20 개선사항"
+excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
+
+categories:
+  - TestCategory
+tags:
+  - TestCategory
+---
+
 # Kubernetes 1.20 개선사항
 
 2020년 올해의 마지막 릴리즈로 쿠버네티스 커뮤니티에서 kubernetes 1.20을 릴리즈했다.
