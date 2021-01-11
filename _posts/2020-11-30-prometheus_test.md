@@ -1,11 +1,16 @@
-# Prometheus operator의 작동방식
 ---
-date: 2020-11-12
-title: "Prometheus Study"
-categories: blog
-tags: jekyll
+date: 2020-11-30
+title: "Prometheus Operator의 작동 방식 "
+categories: 
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Prometheus
 
 ---
+
+# Prometheus operator의 작동방식
 
 # Prometheus
 

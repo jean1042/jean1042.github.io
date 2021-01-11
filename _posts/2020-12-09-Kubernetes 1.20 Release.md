@@ -1,11 +1,11 @@
 ---
 title:  "Kubernetes 1.20 개선사항"
-excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
-
+date: 2020-12-09
 categories:
-  - TestCategory
+  - Kubernetes
 tags:
-  - TestCategory
+  - Kubernetes
+  - DevOps
 ---
 
 # Kubernetes 1.20 개선사항

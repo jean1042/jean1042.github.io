@@ -1,3 +1,14 @@
+---
+date: 2020-12-14
+title: "Prometheus Operator의 작동 방식"
+categories: 
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Prometheus
+
+---
 # Terraform and IaC 기초
 
 이번에 테라폼을 이용해서 DB인프라를 구축하는 티켓을 받았다. 살짝 TMI지만 받으면서 포지션도 원래 DevOps에서 약간 Back-end / Plug in 서비스 개발로 변경되었다. 지난번에 DB쪽 모니터링을 담당했는데 그 때 얻은 지식을 바탕으로 구축하는걸 그나마 잘 관찰..할 수 있게 되었다(ㅋㅋㅋㅋ디비 인프라 구축은 내가 아직 역량이 딸려서 못하고, 구축하는걸 잘 관찰하고 서폿 코드 짜는.. 조교 역할 정도..의 티켓). 그래도 팀 리더님이 시간 내주셔서 Terraform 기초 강의까지 해주셔서 안잊어버리고 싶어서 글로 남겨가며 복습 복습.
