@@ -1,7 +1,6 @@
 ---
-permalink: /about/
 title: "About"
-excerpt: "about.md"
+permalink: /about/
 author_profile: true
 ---
 
