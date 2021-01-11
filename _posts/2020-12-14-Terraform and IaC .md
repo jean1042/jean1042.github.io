@@ -1,6 +1,6 @@
 ---
 date: 2020-12-14
-title: "Prometheus Operator의 작동 방식"
+title: "Terraform and IaC 기초"
 categories: 
   - Kubernetes
 tags:
