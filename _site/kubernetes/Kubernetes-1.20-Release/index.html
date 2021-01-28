@@ -1,0 +1,693 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Kubernetes 1.20 개선사항 - June in Cloud-Valley</title>
+<meta name="description" content="Kubernetes 1.20 개선사항">
+
+
+  <meta name="author" content="Jiyoon, Park">
+  
+  <meta property="article:author" content="Jiyoon, Park">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="June in Cloud-Valley">
+<meta property="og:title" content="Kubernetes 1.20 개선사항">
+<meta property="og:url" content="http://localhost:4000/kubernetes/Kubernetes-1.20-Release/">
+
+
+  <meta property="og:description" content="Kubernetes 1.20 개선사항">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-12-09T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/kubernetes/Kubernetes-1.20-Release/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jiyoon Park, June",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="June in Cloud-Valley Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          June in Cloud-Valley
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://jean1042.github.io/categories">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/profile.jpg" alt="Jiyoon, Park" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jiyoon, Park</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Change the world, WHY NOT</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Seoul, South Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:parkjiyoon1042@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/jean1042" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:parkjiyoon1042@gmail.com">
+            <meta itemprop="email" content="parkjiyoon1042@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Kubernetes 1.20 개선사항">
+    <meta itemprop="description" content="Kubernetes 1.20 개선사항">
+    <meta itemprop="datePublished" content="2020-12-09T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Kubernetes 1.20 개선사항
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="kubernetes-120-개선사항">Kubernetes 1.20 개선사항</h1>
+
+<p>2020년 올해의 마지막 릴리즈로 쿠버네티스 커뮤니티에서 kubernetes 1.20을 릴리즈했다.</p>
+
+<p>이번 릴리즈는 주로 안정성에 초점을 두고, 알파 단계에서 16개 / 베타 단계에서 15개 / 안정에서 11개 / 2개의 지원 중단으로 릴리스를 진행한다.</p>
+
+<p>1.20 Enhancements tracking에 대해 잘 정리된 시트를 아래에서 확인할 수 있다. 링크.. github document들 모아놓은 것만으로도 짱대박인듯</p>
+
+<p><a href="https://docs.google.com/spreadsheets/d/1Ch7PIapJhwdl83HEnYvwFNz96z3vk_eHnf8heLxxgyw/edit#gid=936265414">https://docs.google.com/spreadsheets/d/1Ch7PIapJhwdl83HEnYvwFNz96z3vk_eHnf8heLxxgyw/edit#gid=936265414</a></p>
+
+<h3 id="알파-개선-사항">알파 개선 사항</h3>
+
+<p><strong><em>IPV4 / IPV6 듀얼 스택</em></strong></p>
+
+<p>포드에 IPV4, IPV6 주소를 모두 할당 가능하다. 오.. 포드 주소가 다채로워지겠군</p>
+
+<p>테스트 및 평가에 아직은 더 많은 시간을 할당하기 위해 알파로 남았다.</p>
+
+<p><strong><em>정상적인 노드 종료</em></strong></p>
+
+<p>kubelet에서 종료가 발생하고 있는 신호를 워크로드한테 보내 워크로드가 이벤트를 정상적으로 준비할 수 있는 기회를 제공한다.</p>
+
+<p><strong><em>로드밸런서를 위한 혼합 프로토콜</em></strong></p>
+
+<p>프로토콜이 서로 포트 정의가 다른 LB서비스를 만들 수 있다. 음.. 쿠버린이 아니 쿠버응애인 나는 이게 무슨말인지 이해가 안간다. 예전에는 둘 이상의 포트가 정의된 경우에 모든 포트가 동일한 프로토콜을 가져야했지만, 개선되었다고 한다.</p>
+
+<p>아 .. lb가 부하분산할때 사용하는 프로토콜을 포트 단위로도 분리해줄 수 있다는 말인가보다.</p>
+
+<p><strong><em>resource requests, limits에 대한 메트릭 노출</em></strong></p>
+
+<p>아닛..! 포드 리소스랑 리밋을 메트릭으로 볼 수 있도록 하는 새로운 메트릭 endpoint가 스케줄러에 추가되었다. 쿠응애인 나에게 지금 인턴하는 회사에서 처음 맡겨주셨던 업무가 모니터링이었다. 그래서 쿠버 모니터링 쪽에 관련된 건 더 자세히 읽게 된다.(그나마 알만한 소리가 아주 조금 있는편..) Prometheus에서 pod별 resource requests, limits 에 대해 메트릭을 지원하지만, 이 새로운 엔드포인트를 도입하면 실제 클러스터  사용률이나 용량을 더 잘 설명하는데 도움이 될 것 같다.</p>
+
+<h3 id="베타-개선-사항">베타 개선 사항</h3>
+
+<p>베타 향상은 예전에는 알파 형식으로 존재했지만 이제 안정적이어서 베타로 전환된 사항들을 말한단다.</p>
+
+<p>대규모 커뮤니티 프로젝트는 릴리즈 할 때 개선사항을 이렇게 알파 베타로 나누어서 릴리즈하는 모습이 가끔 보인다.</p>
+
+<p><strong><em>CronJob</em></strong></p>
+
+<p>Kubernetes 1.4에서 Scheduled jobs라는 이름으로 쓰이던 기능이 1.8에서 CronJob이라는 이름으로 베타로 전환되었다. 그럼 이번 1.20에서는 대체 뭘 한거지!! CronJob 컨트롤러의 도입이다. CronJob을 성공적으로 배포하고 성능문제 해결하도록 하는 중간.. 컨트롤러가 도입되었다.</p>
+
+<p><strong><em>Kubectl Debug</em></strong></p>
+
+<p>원래 1.18에 있었던 kubectl debug 명령은 이번에 베타로 전환되었다. (kubectl 1.15까지만 경험해본 나는 kubectl debug명령어가 있는줄도 몰랐다) 이번에 새로 도입되는건 디버깅중인 포드의 복사본을 만들고 사용중인 이미지를 변경하는 기능이다.</p>
+
+<p><strong><em>Runtime class</em></strong></p>
+
+<p>Pod describe를 해보면 보이는 PodSpec내에서 Runtimeclass를 지정하는 기능이 있따. kubernetes 1.14에서 베타로 승격되었었음. 이 기능이 이번에 안정화되면서 1.20에 베타로 편입</p>
+
+<p><strong><em>느리게 시작되는 포드에다가 시작 활성 상태 Probe hold off 추가</em></strong></p>
+
+<p>이게 무슨 말이냐.. 어떤 워크로드는 시작하는데 오래걸릴 수 있다. 느리게 시작되면 문제가 생기는데,  “워크로드가 상태가 괜찮니??!! 나 이제 시작해도 되니??”를 검증하는 활성 상태 probe 과정에서 문제를 일으킬 수 있다는 게 그 문제다. 1.16 버전에 처음 도입된 startupProbe를 사용하면, pod가 정상적으로 시작될 때까지 이 문제검사검증 을 늦춰주는 기능이다.</p>
+
+<p><strong><em>CSI Volume Snapshot</em></strong></p>
+
+<p>오..볼륨 스냅샷을 사용하는 기능이다. 1.17 이후 베타 상태를 유지했다고 함. 볼륨 스냅샷 작업을 트리거해주는 워크플로우를 지원하고, kuber환경이나 호환되는 스토리지 제공업체랑 통합을 지원한다.</p>
+
+<h3 id="향후-릴리즈는">향후 릴리즈는?</h3>
+
+<p>앞으로 Kubernetes 출시 주기는.. 2021년에 3개의 릴리즈 계획이 있다고 한다.</p>
+
+<p>1.21은 1월에 시작! 해서 3월에 릴리즈 될 예정. 개인적으로 위에 알파 기능들 중에 어떤 친구가 안정화되어 베타로 전환될지 궁금하다.</p>
+
+<blockquote>
+  <p>디디늉의 개인적인 생각</p>
+</blockquote>
+
+<p>한 1달쯤 전에 프로메테우스 관련되어서 배포를 하다가, 지원되는 버전이 안맞아서 메트릭이 안나오던 일이 있었다. 메트릭이 왜 안나오지? 의 이유에 관해 회사분들께 설명을 드리는 과정에서 숫자 1.14인지 1.15인지.. 1.16인지..를 까먹어서 허버허버어버버….훌루루룩.. 내 설명은 이렇게 신뢰를 잃어버렸고.. (이하생략…).</p>
+
+<p>그 때, 팀 리더님께서 릴리즈 넘버, 버전을 기억하는건 엔지니어한테 중요하다는 팁을 주신 이후로 버전업이랑 릴리즈에 관심을 갖게 되었다. 쿠버 릴리즈에 대해 관심을 갖고 능동적으로 찾아본건 이번이 처음이지만, 읽으면서 “내가 하고 있는 프로젝트에 이 기능을 만약에 도입한다면? 이게 어느 범위에 영향을 끼치려나? 부작용은?” 을 깊은 수준은 아니더라도 상상해보는 나를 볼 수 있었다. 만약에 운좋게 기회가 되어서 기능 배포를 맡게 되면 꼭 글을 또 써야겠다.</p>
+
+<p>참고한 링크</p>
+
+<p><a href="https://tanzu.vmware.com/content/blog/kubernetes-1-20-a-big-release-to-celebrate-the-end-of-2020?src=so_5a314d05d9484&amp;cid=70134000001SkJT">https://tanzu.vmware.com/content/blog/kubernetes-1-20-a-big-release-to-celebrate-the-end-of-2020?src=so_5a314d05d9484&amp;cid=70134000001SkJT</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#devops" class="page__taxonomy-item" rel="tag">DevOps</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#kubernetes" class="page__taxonomy-item" rel="tag">Kubernetes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#kubernetes" class="page__taxonomy-item" rel="tag">Kubernetes</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-12-09T00:00:00+09:00">December 9, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Kubernetes+1.20+%EA%B0%9C%EC%84%A0%EC%82%AC%ED%95%AD%20http%3A%2F%2Flocalhost%3A4000%2Fkubernetes%2FKubernetes-1.20-Release%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fkubernetes%2FKubernetes-1.20-Release%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fkubernetes%2FKubernetes-1.20-Release%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/kubernetes/prometheus_test/" class="pagination--pager" title="Prometheus Operator의 작동 방식
+">이전</a>
+    
+    
+      <a href="/kubernetes/Terraform-and-IaC/" class="pagination--pager" title="Terraform and IaC 기초
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kubernetes/Terraform-and-IaC/" rel="permalink">Terraform and IaC 기초
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Terraform and IaC 기초
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kubernetes/prometheus_test/" rel="permalink">Prometheus Operator의 작동 방식
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Prometheus operator의 작동방식
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ideas/%EA%B8%80%EC%93%B0%EA%B8%B0%EB%A7%B9%EC%97%90%EC%84%9C-%ED%83%88%EC%B6%9C%ED%95%98%EA%B8%B0/" rel="permalink">글쓰기맹에서 탈출하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">글쓰기맹에서 탈출하기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/jean1042" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Jiyoon Park, June. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

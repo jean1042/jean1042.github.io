@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    <url>
+      <loc>http://localhost:4000/kubernetes/Terraform-and-IaC/</loc>
+      
+        <lastmod>2020-12-14T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/kubernetes/Kubernetes-1.20-Release/</loc>
+      
+        <lastmod>2020-12-09T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/kubernetes/prometheus_test/</loc>
+      
+        <lastmod>2020-11-30T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/ideas/%E1%84%80%E1%85%B3%E1%86%AF%E1%84%8A%E1%85%B3%E1%84%80%E1%85%B5%E1%84%86%E1%85%A2%E1%86%BC%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5-%E1%84%90%E1%85%A1%E1%86%AF%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</loc>
+      
+        <lastmod>2020-11-28T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+</urlset>
