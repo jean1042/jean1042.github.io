@@ -61,7 +61,7 @@ Bare Metal DB system은 로컬로 연결된 nvme 스토리지랑 함께, Oracle 
 
 서울리전에서는 다음 2개 사용가능! 
 
-![OCI%20DB%20service%20a312ce27de0d4c71a473ba7278cfe715/Untitled.png](OCI%20DB%20service%20a312ce27de0d4c71a473ba7278cfe715/Untitled.png)
+![oci_shapes](https://user-images.githubusercontent.com/25656426/106433499-a67c0000-64b3-11eb-82d8-f50af7d3f8f6.png)
 
 note) 데이터베이스 리소스에 대한 초당 청구
 
